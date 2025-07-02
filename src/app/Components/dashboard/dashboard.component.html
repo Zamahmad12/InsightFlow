@@ -1,0 +1,334 @@
+<div class="dashboard-container">
+  <section class="profile-section">
+    <div class="profile-header">
+      <!-- Search -->
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search for mutual funds</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <button class="search-button">
+        <mat-icon>search</mat-icon>
+
+        Search
+      </button>
+
+      <!-- Notifications -->
+      <div class="notification-icon ">
+        <i class="fa-solid fa-bell"></i>
+        <span>7</span>
+      </div>
+      <!-- profile-section -->
+      <div class="profile-info">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/033/225/461/small/a-business-man-stands-against-white-background-with-his-arms-crossed-photo.jpg"
+          alt="User" />
+        <div class="user-text">
+          <div class="user-name">Zameer Ahmad</div>
+          <div class="user-role">Meinvest Plus</div>
+        </div>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>expand_more</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>help_outline</mat-icon>
+          <span>Help Center</span>
+        </button>
+
+        <button mat-menu-item>
+          <mat-icon>headset_mic</mat-icon>
+          <span>Customer Care</span>
+        </button>
+
+        <button mat-menu-item class="sign-out-item">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+
+    </div>
+
+  </section>
+  <!-- 1. Header Section -->
+  <section class="header-section">
+    <div class="welcome">
+      <div class="welcome-text">
+        <h2>Welcome Back Zameer Ahmad</h2>
+        <p>Happy to see you again. Get update of your asset today, good luck!!</p>
+      </div>
+      <div class="welcome-actions">
+        <button>
+          <i class="fas fa-download"></i>
+          <span>Download Report</span>
+        </button>
+      </div>
+    </div>
+    <div class="summary-cards">
+      <mat-card class="summary-card ">
+        <div class="card-header">
+          <h4>My Investment Asset</h4>
+          <div class="asset-icon">
+            <mat-icon>groups</mat-icon>
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="value">$178,975</p>
+          <span class="positive">+ $150 today</span>
+        </div>
+
+      </mat-card>
+
+      <mat-card class="summary-card ">
+        <div class="card-header">
+          <h4>Yearly Profits</h4>
+          <div class="profit-icon">
+            <mat-icon>attach_money</mat-icon>
+          </div>
+        </div>
+        <div class="card-content">
+
+          <p class="value">$88,742</p>
+          <span class="positive">
+            10% <mat-icon class="icon-up">arrow_upward</mat-icon> <span style="color: black;">+ $150 today</span>
+          </span>
+        </div>
+
+      </mat-card>
+
+      <mat-card class="summary-card ">
+        <div class="card-header">
+          <h4>Profit Margin</h4>
+          <div class="margin-icon">
+            <mat-icon>account_balance_wallet</mat-icon>
+          </div>
+        </div>
+        <div class="card-content">
+          <p class="value">$48,632</p>
+          <span class="negative">
+            4.23% <mat-icon class="icon-down">arrow_downward</mat-icon><span style="color: black;">+ $150 today</span>
+          </span>
+        </div>
+
+      </mat-card>
+
+    </div>
+  </section>
+
+  <!-- 2. Investment Details Section -->
+  <section class="investment-details">
+    <div class="investment-">
+      <mat-card class="investment-summary-card">
+        <div class="header">
+          <div>
+            <h3>Investment Details</h3>
+            <p class="subtext">Assets you have in your account</p>
+          </div>
+          <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+        </div>
+
+        <div class="total-value">
+          <h2>$178,975</h2>
+          <span class="growth">6.75% <mat-icon class="up-icon">arrow_upward</mat-icon> This Month</span>
+        </div>
+
+        <div class="bar-graph">
+          <div class="bar money-market" style="width: 32%"></div>
+          <div class="bar stocks" style="width: 18%"></div>
+          <div class="bar bonds" style="width: 12%"></div>
+          <div class="bar sharia" style="width: 46%"></div>
+        </div>
+
+        <div class="asset-breakdown">
+          <div class="item">
+            <span class="dot purple"></span> Money Market
+            <span class="amount">$42,279</span>
+            <span class="percent purple-badge">32%</span>
+          </div>
+          <div class="item">
+            <span class="dot blue"></span> Stocks
+            <span class="amount">$15,389</span>
+            <span class="percent blue-badge">18%</span>
+          </div>
+          <div class="item">
+            <span class="dot green"></span> Bonds
+            <span class="amount">$19,572</span>
+            <span class="percent green-badge">12%</span>
+          </div>
+          <div class="item">
+            <span class="dot gray"></span> Sharia
+            <span class="amount">$6,793</span>
+            <span class="percent gray-badge">46%</span>
+          </div>
+        </div>
+      </mat-card>
+
+    </div>
+    <!-- 3. Investment Statistics Section -->
+    <div class="investment">
+      <mat-card class="investment-card">
+        <div class="stat-header">
+          <h3>Investment Statistic</h3>
+          <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </div>
+
+        <!-- Placeholder for Chart -->
+        <div class="chart-placeholder">
+          <app-charts></app-charts>
+        </div>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- 4. Investment Assets Section -->
+  <section class="investment-assets">
+    <div class="assets">
+      <mat-card class="assets-card">
+        <div class="asset-header">
+          <div class="asset-text">
+            <h3>My Investment Assets</h3>
+            <p>Explore Invesment asset and keep up to date</p>
+          </div>
+          <mat-form-field class="filters">
+            <mat-label>Sort By</mat-label>
+            <mat-select>
+              <mat-option value="cagr">CAGR</mat-option>
+              <mat-option value="aum">Total AUM</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button class="see-all-button">See All</button>
+
+        </div>
+
+        <div class="asset-content">
+          <mat-card class="mat-asset">
+            <h4>ABF India Bond Index</h4>
+            <div class="content-card">
+              <div class="content-text">
+                <h3>Total AUM</h3>
+                <p>$4.58M</p>
+              </div>
+              <div class="content-text">
+                <h3>CAGR</h3>
+                <p class="cagr">10%</p>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card class="mat-asset">
+            <h4>ABF India Bond Index</h4>
+            <div class="content-card">
+              <div class="content-text">
+                <h3>Total AUM</h3>
+                <p>$4.58M</p>
+              </div>
+              <div class="content-text">
+                <h3>CAGR</h3>
+                <p class="cagr">10%</p>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card class="mat-asset">
+            <h4>ABF India Bond Index</h4>
+            <div class="content-card">
+              <div class="content-text">
+                <h3>Total AUM</h3>
+                <p>$4.58M</p>
+              </div>
+              <div class="content-text">
+                <h3>CAGR</h3>
+                <p class="cagr">10%</p>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card class="mat-asset">
+            <h4>BNI-AM Index IDX30</h4>
+            <div class="content-card">
+              <div class="content-text">
+                <h3>Total AUM</h3>
+                <p>$2.58M</p>
+              </div>
+              <div class="content-text">
+                <h3>CAGR</h3>
+                <p class="cagr negative">-4.59%</p>
+              </div>
+            </div>
+          </mat-card>
+
+        </div>
+      </mat-card>
+    </div>
+    <!-- 5. My Savings Plan -->
+    <div class="savings-plan">
+      <mat-card class="savings-card">
+        <div class="card-header">
+          <div>
+            <h3>My Savings Plan</h3>
+            <p class="subtitle">Saving plan based on your needs</p>
+          </div>
+          <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Menu 3">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu3="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <!-- Saving Item 1 -->
+        <div class="saving-item">
+          <div class="icon purple">
+            <mat-icon>card_giftcard</mat-icon>
+          </div>
+          <div class="saving-info">
+            <div class="title-row">
+              <h4>Retirement Plan</h4>
+              <span class="amount">$25,000,000</span>
+            </div>
+            <p class="date">Finished in 2045</p>
+            <mat-progress-bar color="primary" mode="determinate" value="51"></mat-progress-bar>
+            <span class="progress-text">51%</span>
+          </div>
+        </div>
+
+        <!-- Saving Item 2 -->
+        <div class="saving-item">
+          <div class="icon blue">
+            <mat-icon>home</mat-icon>
+          </div>
+          <div class="saving-info">
+            <div class="title-row">
+              <h4>New House 2027</h4>
+              <span class="amount">$500,000</span>
+            </div>
+            <p class="date">Finished in 2027</p>
+            <mat-progress-bar color="accent" mode="determinate" value="87"></mat-progress-bar>
+            <span class="progress-text">87%</span>
+          </div>
+        </div>
+      </mat-card>
+
+    </div>
+  </section>
+</div>

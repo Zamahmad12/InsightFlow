@@ -1,0 +1,690 @@
+/* Container */
+.dashboard-container {
+  padding: 1.5rem;
+  background-color: #10b981;
+  color: #121212;
+  font-family: "Segoe UI", sans-serif;
+}
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.search-field {
+  height: 56px;
+  box-shadow: rgba(0, 0, 0, 0.281) 0px 2px 4px;  
+  background-color: #ffffff;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+.search-button {
+  height: 56px; 
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 15px;
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  margin-top: 3px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+    box-shadow: rgba(0, 0, 0, 0.281) 0px 2px 4px;  
+
+}
+
+
+/* Notification Icon */
+.notification-icon {
+  position: relative;
+  margin-left: auto;
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.notification-icon i {
+  font-size: 28px;
+  color: white;
+}
+
+.notification-icon span {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+  gap: 12px;
+  justify-content: right;
+}
+
+img {
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #3b3e43;
+}
+/* dropdown */
+
+.sign-out-item {
+  color: red;
+}
+
+.sign-out-item mat-icon {
+  color: red;
+}
+
+.mat-menu-item span {
+  margin-left: 8px;
+}
+
+/* Welcome Row */
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.welcome-text h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.welcome-text p {
+  font-size: 0.95rem;
+  color: #111315;
+  margin-top: 4px;
+}
+
+/* Button */
+.welcome-actions button {
+  background-color: blueviolet;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.welcome-actions button:hover {
+  background-color: #6d28d9;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 16px;
+
+}
+.card-content{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+.card-content h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin:  0;
+}
+
+.positive {
+  color: #4caf50;
+  font-size: 14px;
+}
+
+.negative {
+  color: #f44336;
+  font-size: 14px;
+}
+
+.asset-icon {
+  background-color: blueviolet;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+.margin-icon{
+  background-color: rgb(37, 197, 112);
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+.icon-box mat-icon {
+  color: white;
+  font-size: 24px;
+}
+.profit-icon{
+  background-color: #3a87ae;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+.summary-card.purple .icon-box {
+  background-color: #7e57c2;
+}
+
+.summary-card.blue .icon-box {
+  background-color: #039be5;
+}
+
+.summary-card.green .icon-box {
+  background-color: #4caf50;
+}
+
+.icon-up {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.icon-down {
+  font-size: 16px;
+  vertical-align: middle;
+}
+/* Investment Details and Statistics Section */
+.investment-details {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  height: 430px;
+  margin-bottom: 1rem;
+}
+.investment-details .investment- {
+  flex: 0 0 33%;
+}
+
+.investment-details .investment {
+  flex: 0 0 66%;
+}
+
+.investment-summary-card {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  height: 102%;
+}
+
+.investment-summary-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.investment-summary-card .subtext {
+  font-size: 13px;
+  color: #262424;
+  margin: 4px 0 32px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-value {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.total-value h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.growth {
+  color: #4ade80;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.up-icon {
+  font-size: 18px;
+  vertical-align: center;
+}
+
+.bar-graph {
+  display: flex;
+  height: 15px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 16px;
+  margin-bottom: 2rem;
+}
+
+.bar {
+  height: 100%;
+}
+
+.money-market {
+  background-color: #a855f7;
+}
+
+.stocks {
+  background-color: #38bdf8;
+}
+
+.bonds {
+  background-color: #34d399;
+}
+
+.sharia {
+  background-color: #737373;
+}
+
+.asset-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.item .amount {
+  color: #111010;
+  font-weight: 500;
+}
+
+.item .percent {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+  color: white;
+}
+
+.purple {
+  background-color: #a855f7;
+}
+.blue {
+  background-color: #38bdf8;
+}
+.green {
+  background-color: #34d399;
+}
+.gray {
+  background-color: #737373;
+}
+
+.purple-badge {
+  background-color: #a855f7;
+}
+.blue-badge {
+  background-color: #38bdf8;
+}
+.green-badge {
+  background-color: #34d399;
+}
+.gray-badge {
+  background-color: #737373;
+}
+
+
+/* Statistic Filter & Chart */
+.investment-card {
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.stat-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+mat-form-field {
+  width: 200px;
+}
+
+.chart-placeholder {
+  width: 100%;
+  height: 320px;
+  margin-bottom: 12px;
+}
+
+/* Make sure the chart component expands */
+app-charts {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Investment Assets Section */
+.investment-assets {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2rem;
+}
+.asset-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.asset-text h3{
+font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+.asset-text p{
+  font-size: 14px;
+  color: #111315;
+  margin-top: 4px;
+}
+.filters {
+  display: inline-flex;
+  align-items: center;
+  justify-content: right;
+  margin-left: auto;
+}
+.see-all-button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: -10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.see-all-button:hover {
+  background-color: rgb(50, 50, 53); 
+  transform: scale(1.06);
+}
+
+
+/* Investment section: 66% width */
+.investment-assets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+.assets {
+  flex: 2;
+}
+
+.savings-plan {
+  flex: 1;
+}
+
+/* Investment Assets */
+.assets-card {
+  background-color: #ffffff;
+  color: #2e2d2d;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.asset-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.asset-header .asset-text h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.asset-header .asset-text p {
+  margin: 0;
+  color: #2d2a2a;
+  font-size: 14px;
+}
+
+.asset-header .filters {
+  min-width: 100px;
+}
+
+.asset-header button {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.asset-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 16px;
+}
+
+
+.mat-asset {
+  background-color: #ffffff;
+  border: 1px solid  #17171853;
+  border-radius: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  color: rgb(39, 37, 37);
+}
+
+.mat-asset h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.content-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.content-text{
+  background-color: #ffffff;
+  border: 1px solid  #17171853;
+  border-radius: 8px;
+  padding-right: 36px;
+  padding-left: 16px;
+  
+}
+.content-text h3 {
+  font-size: 12px;
+  margin: 0;
+  color: #242323;
+}
+
+.content-text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.content-text .cagr {
+  color: #10b981;
+}
+
+.content-text .cagr.negative {
+  color: #ef4444;
+}
+
+/* Savings Plan */
+.savings-card {
+  background-color: #ffffff;
+  color: black;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.card-header .subtitle {
+  font-size: 13px;
+  color: #2f2121;
+  margin-top: 4px;
+}
+
+.saving-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid  #1717182c;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.icon.purple {
+  background-color: #7c3aed;
+}
+
+.icon.blue {
+  background-color: #0284c7;
+}
+
+.saving-info {
+  flex: 1;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-row h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.title-row .amount {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 12px;
+  color: #999;
+  margin: 4px 0;
+}
+
+mat-progress-bar {
+  height: 6px !important;
+  border-radius: 8px;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 2px;
+  display: block;
+}
