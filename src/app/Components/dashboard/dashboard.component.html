@@ -67,52 +67,28 @@
       </div>
     </div>
     <div class="summary-cards">
-      <mat-card class="summary-card ">
+      <mat-card class="summary-card " *ngFor="let card of summaryCards">
         <div class="card-header">
-          <h4>My Investment Asset</h4>
-          <div class="asset-icon">
-            <mat-icon>groups</mat-icon>
+          <h4>{{card.title}}</h4>
+          <div [ngClass]="card.iconClass">
+            <mat-icon >{{card.icon}}</mat-icon>
           </div>
         </div>
         <div class="card-content">
-          <p class="value">$178,975</p>
-          <span class="positive">+ $150 today</span>
-        </div>
-
-      </mat-card>
-
-      <mat-card class="summary-card ">
-        <div class="card-header">
-          <h4>Yearly Profits</h4>
-          <div class="profit-icon">
-            <mat-icon>attach_money</mat-icon>
-          </div>
-        </div>
-        <div class="card-content">
-
-          <p class="value">$88,742</p>
-          <span class="positive">
-            10% <mat-icon class="icon-up">arrow_upward</mat-icon> <span style="color: black;">+ $150 today</span>
+          <p class="value">{{card.value | currency:"INR"}}</p>
+          <span [ngClass]="card.changeType">
+            <ng-container *ngIf="card.percentage !== undefined">
+              {{ card.percentage }}%
+              <mat-icon *ngIf="card.changeType === 'positive'" class="icon-up">arrow_upward</mat-icon>
+              <mat-icon *ngIf="card.changeType === 'negative'" class="icon-down">arrow_downward</mat-icon>
+            </ng-container>
+            <span style="color: black;">+{{ card.change |currency:"INR"}}</span>
           </span>
         </div>
 
       </mat-card>
 
-      <mat-card class="summary-card ">
-        <div class="card-header">
-          <h4>Profit Margin</h4>
-          <div class="margin-icon">
-            <mat-icon>account_balance_wallet</mat-icon>
-          </div>
-        </div>
-        <div class="card-content">
-          <p class="value">$48,632</p>
-          <span class="negative">
-            4.23% <mat-icon class="icon-down">arrow_downward</mat-icon><span style="color: black;">+ $150 today</span>
-          </span>
-        </div>
 
-      </mat-card>
 
     </div>
   </section>
@@ -133,39 +109,27 @@
         </div>
 
         <div class="total-value">
-          <h2>$178,975</h2>
+          <h2>₹178,975</h2>
           <span class="growth">6.75% <mat-icon class="up-icon">arrow_upward</mat-icon> This Month</span>
         </div>
 
         <div class="bar-graph">
-          <div class="bar money-market" style="width: 32%"></div>
-          <div class="bar stocks" style="width: 18%"></div>
-          <div class="bar bonds" style="width: 12%"></div>
-          <div class="bar sharia" style="width: 46%"></div>
+          <div *ngFor="let asset of stockData" class="bar"
+            [ngStyle]="{'width':getPrecentage(asset.name) ,'background-color': asset.color}"></div>
         </div>
 
         <div class="asset-breakdown">
-          <div class="item">
-            <span class="dot purple"></span> Money Market
-            <span class="amount">$42,279</span>
-            <span class="percent purple-badge">32%</span>
-          </div>
-          <div class="item">
-            <span class="dot blue"></span> Stocks
-            <span class="amount">$15,389</span>
-            <span class="percent blue-badge">18%</span>
-          </div>
-          <div class="item">
-            <span class="dot green"></span> Bonds
-            <span class="amount">$19,572</span>
-            <span class="percent green-badge">12%</span>
-          </div>
-          <div class="item">
-            <span class="dot gray"></span> Sharia
-            <span class="amount">$6,793</span>
-            <span class="percent gray-badge">46%</span>
+          <div class="item" *ngFor="let asset of stockData">
+            <span class="dot" [ngStyle]="{ 'background-color': asset.color }">
+            </span>
+            <span>{{ asset.name |titlecase }}</span>
+            <span class="amount">{{ asset.price | currency:'INR' }}</span>
+            <span class="percent" [ngStyle]="{ 'background-color': asset.color }">
+              {{ getPrecentage(asset.name) }}
+            </span>
           </div>
         </div>
+
       </mat-card>
 
     </div>
@@ -198,8 +162,8 @@
       <mat-card class="assets-card">
         <div class="asset-header">
           <div class="asset-text">
-            <h3>My Investment Assets</h3>
-            <p>Explore Invesment asset and keep up to date</p>
+            <h3 id="title">My Investment Assets</h3>
+            <p id="content">Explore Invesment asset and keep up to date</p>
           </div>
           <mat-form-field class="filters">
             <mat-label>Sort By</mat-label>
@@ -208,7 +172,7 @@
               <mat-option value="aum">Total AUM</mat-option>
             </mat-select>
           </mat-form-field>
-          <button class="see-all-button">See All</button>
+          <button >See All</button>
 
         </div>
 
@@ -218,7 +182,7 @@
             <div class="content-card">
               <div class="content-text">
                 <h3>Total AUM</h3>
-                <p>$4.58M</p>
+                <p>₹4.58M</p>
               </div>
               <div class="content-text">
                 <h3>CAGR</h3>
@@ -231,7 +195,7 @@
             <div class="content-card">
               <div class="content-text">
                 <h3>Total AUM</h3>
-                <p>$4.58M</p>
+                <p>₹4.58M</p>
               </div>
               <div class="content-text">
                 <h3>CAGR</h3>
@@ -244,7 +208,7 @@
             <div class="content-card">
               <div class="content-text">
                 <h3>Total AUM</h3>
-                <p>$4.58M</p>
+                <p>₹4.58M</p>
               </div>
               <div class="content-text">
                 <h3>CAGR</h3>
@@ -257,7 +221,7 @@
             <div class="content-card">
               <div class="content-text">
                 <h3>Total AUM</h3>
-                <p>$2.58M</p>
+                <p>₹2.58M</p>
               </div>
               <div class="content-text">
                 <h3>CAGR</h3>
@@ -304,7 +268,7 @@
           <div class="saving-info">
             <div class="title-row">
               <h4>Retirement Plan</h4>
-              <span class="amount">$25,000,000</span>
+              <span class="amount">₹25,000,000</span>
             </div>
             <p class="date">Finished in 2045</p>
             <mat-progress-bar color="primary" mode="determinate" value="51"></mat-progress-bar>
@@ -320,7 +284,7 @@
           <div class="saving-info">
             <div class="title-row">
               <h4>New House 2027</h4>
-              <span class="amount">$500,000</span>
+              <span class="amount">₹500,000</span>
             </div>
             <p class="date">Finished in 2027</p>
             <mat-progress-bar color="accent" mode="determinate" value="87"></mat-progress-bar>
